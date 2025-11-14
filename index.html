@@ -7,6 +7,44 @@
   <meta name="description" content="Portfolio and resume for Alex Anderson, environmental scientist and laboratory leader specializing in water quality, analytical chemistry, and community-centered science." />
 
   <style>
+/* Contact mini-bar under name */
+.nav-contact-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.nav-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
+  backdrop-filter: blur(4px);
+  transition: 150ms ease;
+}
+
+.nav-contact-item:hover {
+  border-color: var(--accent);
+  color: var(--text);
+  background: rgba(255,255,255,0.08);
+}
+
+.nav-contact-item span {
+  font-size: 12px;
+}
+
+@media (max-width: 720px) {
+  .nav-contact-bar {
+    justify-content: flex-start;
+  }
+}
+    
 /* Reduce space between nav and Contact section */
 .page-shell {
   padding-top: 40px;   /* was 96px */
@@ -523,52 +561,7 @@
 
   <main class="page-shell">
     <!-- CONTACT AT TOP -->
-    <section id="contact">
-      <div class="section-header">
-        <h2 class="section-title">Contact</h2>
-        <p class="section-kicker">
-          Quick ways to reach me about environmental lab roles and projects.
-        </p>
-      </div>
-
-      <div class="contact-card">
-        <p class="contact-text">
-          I’m open to roles and collaborations at the intersection of lab science, water
-          quality, and community impact. Reach out by email or connect through LinkedIn or
-          Indeed for opportunities, questions, or collaborations.
-        </p>
-
-        <div style="display:flex;flex-direction:column;gap:8px;min-width:200px;">
-          <a
-            class="social-link"
-            href="mailto:acanderson494@gmail.com"
-          >
-            <span class="social-icon">✉️</span>
-            <span>Email: acanderson494@gmail.com</span>
-          </a>
-
-          <a
-            class="social-link"
-            href="https://www.linkedin.com/in/alex-anderson-3872b064/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="social-icon">🔗</span>
-            <span>Connect on LinkedIn</span>
-          </a>
-
-          <a
-            class="social-link"
-            href="https://profile.indeed.com/p/alexa-2xsqkw9"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <span class="social-icon">📌</span>
-            <span>View Indeed Profile</span>
-          </a>
-        </div>
-      </div>
-    </section>
+   
 
     <!-- HERO -->
     <section class="hero">
