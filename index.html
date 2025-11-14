@@ -49,10 +49,20 @@
       padding: 40px 24px 40px; /* reduced top padding */
     }
 
-    @media (max-width: 768px) {
-      .page-shell {
-        padding: 32px 18px 32px;
-      }
+/* Mobile PDF scaling fix */
+@media (max-width: 600px) {
+  .resume-frame {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .resume-frame iframe {
+    transform: scale(0.65);     /* zooms OUT */
+    transform-origin: top left;
+    width: 155%;                /* compensate for scaling */
+    height: 155%;
+  }
+}
     }
 
     /* Nav */
