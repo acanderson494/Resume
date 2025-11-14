@@ -76,16 +76,15 @@
     }
 
     .nav-brand {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 20px;        /* increased from 14px */
-  font-weight: 600;        /* slightly bolder */
-  letter-spacing: 0.14em;  /* sharper look */
-  text-transform: uppercase;
-  color: var(--text);      /* brighter so it stands out */
-}
-
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;        /* increased from 14px */
+      font-weight: 600;        /* slightly bolder */
+      letter-spacing: 0.14em;  /* sharper look */
+      text-transform: uppercase;
+      color: var(--text);      /* brighter so it stands out */
+    }
 
     .nav-logo {
       width: 24px;
@@ -374,49 +373,52 @@
       font-size: 11px;
     }
 
+    /* Resume preview container */
     .resume-frame {
-  height: 650px;           /* adjust as needed */
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(15, 23, 42, 0.9);
-  background: #020617;
-  overflow: auto;
-      -webkit-overflow-scrolling: touch;
-}
+      height: 650px;           /* desktop / tablet height */
+      border-radius: var(--radius-lg);
+      border: 1px solid rgba(15, 23, 42, 0.9);
+      background: #020617;
+      overflow: auto;                      /* allow scroll */
+      -webkit-overflow-scrolling: touch;   /* smooth mobile scroll */
+    }
+
     @media (max-width: 600px) {
-  .resume-frame {
-    height: 420px;   /* try 380–450 until it feels right */
-  }
-}
+      .resume-frame {
+        height: 500px;   /* mobile height – tweak if needed */
+      }
+    }
 
-.resume-frame iframe {
-  width: 100%;
-  height: 100%;
-  display: block;
-  border: none;
-}
-   /* Hide mobile CTA by default (desktop) */
-.resume-mobile-cta {
-  display: none;
-}
+    .resume-frame iframe {
+      width: 100%;
+      height: 100%;
+      display: block;
+      border: none;
+      pointer-events: auto;               /* ensure touch scroll works */
+    }
 
-/* On small screens, show BOTH the inline preview and the CTA */
-@media (max-width: 600px) {
-  .resume-mobile-cta {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 14px 12px 6px;
-  }
+    /* Hide mobile CTA by default (desktop) */
+    .resume-mobile-cta {
+      display: none;
+    }
 
-  .resume-mobile-cta p {
-    font-size: 13px;
-    color: var(--muted);
-    margin: 0;
-  }
-}
+    /* On small screens, show BOTH the inline preview and the CTA */
+    @media (max-width: 600px) {
+      .resume-mobile-cta {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 14px 12px 6px;
+      }
 
+      .resume-mobile-cta p {
+        font-size: 13px;
+        color: var(--muted);
+        margin: 0;
+      }
+    }
 
     /* Sections */
 
@@ -644,30 +646,30 @@
 
       <!-- RESUME PREVIEW -->
       <aside class="resume-card">
-  <div class="resume-header">
-    <span>Resume preview</span>
-    <span class="resume-pill">PDF · Inline view</span>
-  </div>
+        <div class="resume-header">
+          <span>Resume preview</span>
+          <span class="resume-pill">PDF · Inline view</span>
+        </div>
 
-  <!-- Desktop / tablet inline preview -->
-  <div class="resume-frame resume-frame--desktop">
-    <iframe src="resume.pdf"></iframe>
-  </div>
+        <!-- Desktop / tablet inline preview (also visible on mobile now) -->
+        <div class="resume-frame resume-frame--desktop">
+          <iframe src="resume.pdf"></iframe>
+        </div>
 
-  <!-- Mobile: open directly instead of inline preview -->
-  <div class="resume-mobile-cta">
-    <p>On mobile, open the full resume as a PDF:</p>
-    <a
-      class="btn btn-primary"
-      href="resume.pdf"
-      target="_blank"
-      rel="noopener noreferrer"
-    >
-      <span class="btn-icon">📄</span>
-      <span>Open Resume (PDF)</span>
-    </a>
-  </div>
-</aside>
+        <!-- Mobile: open directly instead of only inline preview -->
+        <div class="resume-mobile-cta">
+          <p>On mobile, you can also open the full resume as a PDF:</p>
+          <a
+            class="btn btn-primary"
+            href="resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span class="btn-icon">📄</span>
+            <span>Open Resume (PDF)</span>
+          </a>
+        </div>
+      </aside>
 
     </section>
 
