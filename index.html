@@ -49,22 +49,6 @@
       padding: 40px 24px 40px; /* reduced top padding */
     }
 
-/* Mobile PDF scaling fix */
-@media (max-width: 600px) {
-  .resume-frame {
-    position: relative;
-    overflow: hidden;
-  }
-
-  .resume-frame iframe {
-    transform: scale(0.65);     /* zooms OUT */
-    transform-origin: top left;
-    width: 155%;                /* compensate for scaling */
-    height: 155%;
-  }
-}
-    }
-
     /* Nav */
 
     .site-nav {
@@ -642,8 +626,13 @@
           <span class="resume-pill">PDF · Inline view</span>
         </div>
         <div class="resume-frame">
-          <iframe src="resume.pdf"></iframe>
-        </div>
+  <iframe
+    src="https://mozilla.github.io/pdf.js/web/viewer.html?file=https%3A%2F%2Facanderson494.github.io%2FResume%2Fresume.pdf"
+    title="Alex Anderson Resume PDF viewer"
+    loading="lazy"
+  ></iframe>
+</div>
+
       </aside>
     </section>
 
