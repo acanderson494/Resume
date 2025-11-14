@@ -7,73 +7,6 @@
   <meta name="description" content="Portfolio and resume for Alex Anderson, environmental scientist and laboratory leader specializing in water quality, analytical chemistry, and community-centered science." />
 
   <style>
-.nav-inner {
-  padding-bottom: 6px;   /* reduce gap created by contact pill row */
-}
-    
-/* Contact mini-bar under name */
-.nav-contact-bar {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 14px;
-  margin-top: 2px;
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.nav-contact-item {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
-  padding: 4px 10px;
-  border-radius: var(--radius-pill);
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.08);
-  backdrop-filter: blur(4px);
-  transition: 150ms ease;
-}
-
-.nav-contact-item:hover {
-  border-color: var(--accent);
-  color: var(--text);
-  background: rgba(255,255,255,0.08);
-}
-
-.nav-contact-item span {
-  font-size: 12px;
-}
-
-@media (max-width: 720px) {
-  .nav-contact-bar {
-    justify-content: flex-start;
-  }
-}
-    
-/* Reduce space between nav and Contact section */
-.page-shell {
-  padding: 40px 24px 40px;
-}
-
-#contact {
-  margin-top: 10px;    /* was ~40px due to section default */
-}
-    
-   .hero-headshot-wrapper {
-  width: 150px;           /* Medium size */
-  height: 150px;
-  border-radius: 50%;
-  overflow: hidden;
-  border: 3px solid rgba(255,255,255,0.15);
-  box-shadow: 0 12px 36px rgba(0,0,0,0.45);
-  margin-bottom: 20px;
-}
-
-.hero-headshot-wrapper img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
     :root {
       --bg: #020617;
       --nav-bg: rgba(15, 23, 42, 0.9);
@@ -113,12 +46,12 @@
     .page-shell {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 96px 24px 40px;
+      padding: 40px 24px 40px; /* reduced top padding */
     }
 
     @media (max-width: 768px) {
       .page-shell {
-        padding: 80px 18px 32px;
+        padding: 32px 18px 32px;
       }
     }
 
@@ -141,7 +74,7 @@
     .nav-inner {
       max-width: 1100px;
       margin: 0 auto;
-      padding: 10px 24px;
+      padding: 10px 24px 6px; /* slightly tighter bottom padding */
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -204,9 +137,45 @@
       width: 100%;
     }
 
+    /* Contact mini-bar under name */
+
+    .nav-contact-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 2px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+
+    .nav-contact-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: var(--radius-pill);
+      background: rgba(255,255,255,0.05);
+      border: 1px solid rgba(255,255,255,0.08);
+      backdrop-filter: blur(4px);
+      transition: 150ms ease;
+    }
+
+    .nav-contact-item:hover {
+      border-color: var(--accent);
+      color: var(--text);
+      background: rgba(255,255,255,0.08);
+    }
+
+    .nav-contact-item span {
+      font-size: 12px;
+    }
+
     @media (max-width: 720px) {
       .nav-links {
         display: none;
+      }
+      .nav-contact-bar {
+        justify-content: flex-start;
       }
     }
 
@@ -216,7 +185,7 @@
       display: grid;
       grid-template-columns: minmax(0, 1.15fr) minmax(0, 1.1fr);
       gap: 32px;
-      margin-top: 10px;
+      margin-top: 10px; /* reduced from 32px */
       margin-bottom: 40px;
       align-items: center;
     }
@@ -225,6 +194,24 @@
       .hero {
         grid-template-columns: minmax(0, 1fr);
       }
+    }
+
+    /* headshot wrapper */
+
+    .hero-headshot-wrapper {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 3px solid rgba(255,255,255,0.15);
+      box-shadow: 0 12px 36px rgba(0,0,0,0.45);
+      margin-bottom: 20px;
+    }
+
+    .hero-headshot-wrapper img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
 
     .pill {
@@ -516,8 +503,7 @@
       color: var(--muted);
     }
 
-    /* Contact */
-
+    /* Contact-style card reused in Resume section */
     .contact-card {
       padding: 18px 18px 16px;
       border-radius: var(--radius-lg);
@@ -547,106 +533,96 @@
 </head>
 <body>
   <!-- NAV -->
-<header class="site-nav">
-  <div class="nav-inner">
-    
-    <!-- LEFT SIDE: LOGO + NAME + CONTACT MINI BAR -->
-    <div style="display:flex; flex-direction:column; gap:6px;">
-      <div class="nav-brand">
-        <div class="nav-logo"></div>
-        <span>Alex Anderson</span>
+  <header class="site-nav">
+    <div class="nav-inner">
+      <!-- LEFT: logo + name + contact mini-bar -->
+      <div style="display:flex; flex-direction:column; gap:6px;">
+        <div class="nav-brand">
+          <div class="nav-logo"></div>
+          <span>Alex Anderson</span>
+        </div>
+
+        <div class="nav-contact-bar">
+          <a class="nav-contact-item" href="mailto:acanderson494@gmail.com">
+            ✉️ <span>acanderson494@gmail.com</span>
+          </a>
+
+          <a class="nav-contact-item" href="tel:+16507141861">
+            📞 <span>(650) 714-1861</span>
+          </a>
+
+          <a class="nav-contact-item" href="https://www.linkedin.com/in/alex-anderson-3872b064/" target="_blank" rel="noopener noreferrer">
+            🔗 <span>LinkedIn</span>
+          </a>
+
+          <a class="nav-contact-item" href="https://profile.indeed.com/p/alexa-2xsqkw9" target="_blank" rel="noopener noreferrer">
+            📌 <span>Indeed</span>
+          </a>
+        </div>
       </div>
 
-      <!-- Contact mini bar -->
-      <div class="nav-contact-bar">
-        <a class="nav-contact-item" href="mailto:acanderson494@gmail.com">
-          ✉️ <span>acanderson494@gmail.com</span>
-        </a>
-
-        <a class="nav-contact-item" href="tel:+16507141861">
-          📞 <span>(650) 714-1861</span>
-        </a>
-
-        <a class="nav-contact-item" href="https://www.linkedin.com/in/alex-anderson-3872b064/" target="_blank">
-          🔗 <span>LinkedIn</span>
-        </a>
-
-        <a class="nav-contact-item" href="https://profile.indeed.com/p/alexa-2xsqkw9" target="_blank">
-          📌 <span>Indeed</span>
-        </a>
-      </div>
+      <!-- RIGHT: nav links -->
+      <nav class="nav-links">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#highlights">Highlights</a>
+        <a class="nav-link" href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+      </nav>
     </div>
-
-    <!-- RIGHT SIDE NAV LINKS -->
-    <nav class="nav-links">
-      <a class="nav-link" href="#about">About</a>
-      <a class="nav-link" href="#experience">Experience</a>
-      <a class="nav-link" href="#highlights">Highlights</a>
-      <a class="nav-link" href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-    </nav>
-
-  </div>
-</header>
-
+  </header>
 
   <main class="page-shell">
-    <!-- CONTACT AT TOP -->
-   
-
     <!-- HERO -->
     <section class="hero">
-  <div class="hero-left">
+      <div class="hero-left">
 
-    <!-- NEW HEADSHOT ADDED HERE -->
- <div class="hero-headshot-wrapper">
-  <img src="headshot.JPG" alt="Alex Anderson headshot">
-</div>
+        <div class="hero-headshot-wrapper">
+          <img src="headshot.JPG" alt="Alex Anderson headshot">
+        </div>
 
-    <div class="pill">
-      <span class="pill-dot"></span>
-      <span>Environmental Science · Lab Leadership</span>
-    </div>
+        <div class="pill">
+          <span class="pill-dot"></span>
+          <span>Environmental Science · Lab Leadership</span>
+        </div>
 
-    <h1 class="hero-title">Blending rigorous science with community-centered impact.</h1>
-    <p class="hero-subtitle">
-      I’m Alex Anderson, an environmental scientist and laboratory leader focused on
-      water quality, analytical chemistry, and practical solutions that support public
-      health and healthy ecosystems.
-    </p>
+        <h1 class="hero-title">Blending rigorous science with community-centered impact.</h1>
+        <p class="hero-subtitle">
+          I’m Alex Anderson, an environmental scientist and laboratory leader focused on
+          water quality, analytical chemistry, and practical solutions that support public
+          health and healthy ecosystems.
+        </p>
 
-    <div class="hero-tags">
-      <span class="hero-tag">Water &amp; Wastewater</span>
-      <span class="hero-tag">Analytical Chemistry</span>
-      <span class="hero-tag">Aquatic Toxicology</span>
-      <span class="hero-tag">Process Improvement</span>
-    </div>
+        <div class="hero-tags">
+          <span class="hero-tag">Water &amp; Wastewater</span>
+          <span class="hero-tag">Analytical Chemistry</span>
+          <span class="hero-tag">Aquatic Toxicology</span>
+          <span class="hero-tag">Process Improvement</span>
+        </div>
 
-    <div class="hero-actions">
-      <a class="btn btn-primary" href="resume.pdf" target="_blank" rel="noopener noreferrer">
-        <span class="btn-icon">📄</span>
-        <span>View Resume (PDF)</span>
-      </a>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="resume.pdf" target="_blank" rel="noopener noreferrer">
+            <span class="btn-icon">📄</span>
+            <span>View Resume (PDF)</span>
+          </a>
 
-      <a class="btn btn-ghost" href="#contact">
-        <span class="btn-icon">✉️</span>
-        <span>Get in Touch</span>
-      </a>
-    </div>
+          <a class="btn btn-ghost" href="mailto:acanderson494@gmail.com">
+            <span class="btn-icon">✉️</span>
+            <span>Get in Touch</span>
+          </a>
+        </div>
 
-    <div class="social-row">
-      <a class="social-link" href="https://www.linkedin.com/in/alex-anderson-3872b064/" target="_blank">
-        <span class="social-icon">🔗</span>
-        <span>LinkedIn</span>
-      </a>
+        <div class="social-row">
+          <a class="social-link" href="https://www.linkedin.com/in/alex-anderson-3872b064/" target="_blank" rel="noopener noreferrer">
+            <span class="social-icon">🔗</span>
+            <span>LinkedIn</span>
+          </a>
 
-      <a class="social-link" href="https://profile.indeed.com/p/alexa-2xsqkw9" target="_blank">
-        <span class="social-icon">📌</span>
-        <span>Indeed Profile</span>
-      </a>
-    </div>
-
-  </div>
-
+          <a class="social-link" href="https://profile.indeed.com/p/alexa-2xsqkw9" target="_blank" rel="noopener noreferrer">
+            <span class="social-icon">📌</span>
+            <span>Indeed Profile</span>
+          </a>
+        </div>
+      </div>
 
       <!-- RESUME PREVIEW -->
       <aside class="resume-card">
@@ -760,7 +736,7 @@
         <div class="card">
           <h3 class="card-title">Method &amp; Workflow Innovation</h3>
           <p class="card-body">
-            I’ve helped set up up new analytical workflows and refine existing methods
+            I’ve helped stand up new analytical workflows and refine existing methods
             to be more robust and efficient—reducing turnaround times, minimizing
             repeat runs, and giving staff clearer tools for consistent execution.
           </p>
@@ -804,21 +780,12 @@
           key technical skills.
         </div>
         <div style="display:flex;flex-wrap:wrap;gap:10px;">
-          <a
-            class="btn btn-primary"
-            href="resume.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
+          <a class="btn btn-primary" href="resume.pdf" target="_blank" rel="noopener noreferrer">
             <span class="btn-icon">📄</span>
             <span>Open Resume (PDF)</span>
           </a>
 
-          <a
-            class="btn btn-ghost"
-            href="resume.pdf"
-            download="Alex-Anderson-Resume.pdf"
-          >
+          <a class="btn btn-ghost" href="resume.pdf" download="Alex-Anderson-Resume.pdf">
             <span class="btn-icon">⬇️</span>
             <span>Download PDF</span>
           </a>
@@ -827,7 +794,7 @@
     </section>
 
     <div class="footer">
-      © <script>document.write(new Date().getFullYear());</script> Alex Anderson
+      © <script>document.write(new Date().getFullYear());</script> Alex Anderson · Built on GitHub Pages
     </div>
   </main>
 </body>
