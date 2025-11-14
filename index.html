@@ -543,21 +543,47 @@
 </head>
 <body>
   <!-- NAV -->
-  <header class="site-nav">
-    <div class="nav-inner">
+<header class="site-nav">
+  <div class="nav-inner">
+    
+    <!-- LEFT SIDE: LOGO + NAME + CONTACT MINI BAR -->
+    <div style="display:flex; flex-direction:column; gap:6px;">
       <div class="nav-brand">
         <div class="nav-logo"></div>
         <span>Alex Anderson</span>
       </div>
-      <nav class="nav-links">
-        <a class="nav-link" href="#contact">Contact</a>
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#experience">Experience</a>
-        <a class="nav-link" href="#highlights">Highlights</a>
-        <a class="nav-link" href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
-      </nav>
+
+      <!-- Contact mini bar -->
+      <div class="nav-contact-bar">
+        <a class="nav-contact-item" href="mailto:acanderson494@gmail.com">
+          ✉️ <span>acanderson494@gmail.com</span>
+        </a>
+
+        <a class="nav-contact-item" href="tel:+16507141861">
+          📞 <span>(650) 714-1861</span>
+        </a>
+
+        <a class="nav-contact-item" href="https://www.linkedin.com/in/alex-anderson-3872b064/" target="_blank">
+          🔗 <span>LinkedIn</span>
+        </a>
+
+        <a class="nav-contact-item" href="https://profile.indeed.com/p/alexa-2xsqkw9" target="_blank">
+          📌 <span>Indeed</span>
+        </a>
+      </div>
     </div>
-  </header>
+
+    <!-- RIGHT SIDE NAV LINKS -->
+    <nav class="nav-links">
+      <a class="nav-link" href="#about">About</a>
+      <a class="nav-link" href="#experience">Experience</a>
+      <a class="nav-link" href="#highlights">Highlights</a>
+      <a class="nav-link" href="resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+    </nav>
+
+  </div>
+</header>
+
 
   <main class="page-shell">
     <!-- CONTACT AT TOP -->
