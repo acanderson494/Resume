@@ -7,15 +7,22 @@
   <meta name="description" content="Portfolio and resume for Alex Anderson, environmental scientist and laboratory leader specializing in water quality, analytical chemistry, and community-centered science." />
 
   <style>
-    .hero-headshot {
-  width: 160px;            /* Medium size */
-  height: 160px;
-  border-radius: 50%;      /* Circle */
-  object-fit: cover;
+   .hero-headshot-wrapper {
+  width: 150px;           /* Medium size */
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
   border: 3px solid rgba(255,255,255,0.15);
   box-shadow: 0 12px 36px rgba(0,0,0,0.45);
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
+
+.hero-headshot-wrapper img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
     :root {
       --bg: #020617;
       --nav-bg: rgba(15, 23, 42, 0.9);
@@ -559,7 +566,9 @@
   <div class="hero-left">
 
     <!-- NEW HEADSHOT ADDED HERE -->
-    <img src="headshot.JPG" alt="Alex Anderson headshot" class="hero-headshot">
+ <div class="hero-headshot-wrapper">
+  <img src="headshot.JPG" alt="Alex Anderson headshot">
+</div>
 
     <div class="pill">
       <span class="pill-dot"></span>
