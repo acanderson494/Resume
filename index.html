@@ -396,12 +396,32 @@
   display: block;
   border: none;
 }
+    /* Hide mobile CTA by default (desktop) */
+.resume-mobile-cta {
+  display: none;
+}
 
-    @media (max-width: 600px) {
-      .resume-frame {
-        height: 420px;
-      }
-    }
+/* Switch behavior on small screens */
+@media (max-width: 600px) {
+  .resume-frame--desktop {
+    display: none;  /* hide iframe preview on mobile */
+  }
+
+  .resume-mobile-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 14px 12px 6px;
+  }
+
+  .resume-mobile-cta p {
+    font-size: 13px;
+    color: var(--muted);
+    margin: 0;
+  }
+}
 
     /* Sections */
 
@@ -629,15 +649,31 @@
 
       <!-- RESUME PREVIEW -->
       <aside class="resume-card">
-        <div class="resume-header">
-          <span>Resume preview</span>
-          <span class="resume-pill">PDF · Inline view</span>
-        </div>
-        <div class="resume-frame">
-  <iframe src="resume.pdf"></iframe>
-</div>
+  <div class="resume-header">
+    <span>Resume preview</span>
+    <span class="resume-pill">PDF · Inline view</span>
+  </div>
 
-      </aside>
+  <!-- Desktop / tablet inline preview -->
+  <div class="resume-frame resume-frame--desktop">
+    <iframe src="resume.pdf"></iframe>
+  </div>
+
+  <!-- Mobile: open directly instead of inline preview -->
+  <div class="resume-mobile-cta">
+    <p>On mobile, open the full resume as a PDF:</p>
+    <a
+      class="btn btn-primary"
+      href="resume.pdf"
+      target="_blank"
+      rel="noopener noreferrer"
+    >
+      <span class="btn-icon">📄</span>
+      <span>Open Resume (PDF)</span>
+    </a>
+  </div>
+</aside>
+
     </section>
 
     <!-- ABOUT -->
