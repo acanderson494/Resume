@@ -396,17 +396,13 @@
   display: block;
   border: none;
 }
-    /* Hide mobile CTA by default (desktop) */
+   /* Hide mobile CTA by default (desktop) */
 .resume-mobile-cta {
   display: none;
 }
 
-/* Switch behavior on small screens */
+/* On small screens, show BOTH the inline preview and the CTA */
 @media (max-width: 600px) {
-  .resume-frame--desktop {
-    display: none;  /* hide iframe preview on mobile */
-  }
-
   .resume-mobile-cta {
     display: flex;
     flex-direction: column;
@@ -422,6 +418,7 @@
     margin: 0;
   }
 }
+
 
     /* Sections */
 
