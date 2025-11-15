@@ -7,17 +7,24 @@
   <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 120 120'>
     <defs>
       <filter id='glow' x='-50%' y='-50%' width='200%' height='200%'>
-        <feGaussianBlur stdDeviation='4' result='coloredBlur'/>
+        <feGaussianBlur stdDeviation='4' result='blur'/>
         <feMerge>
-          <feMergeNode in='coloredBlur'/>
-          <feMergeNode in='coloredBlur'/>
+          <feMergeNode in='blur'/>
+          <feMergeNode in='blur'/>
           <feMergeNode in='SourceGraphic'/>
         </feMerge>
       </filter>
     </defs>
 
-    <!-- Neon hex outline -->
-    <polygon 
+    <!-- Filled base hexagon -->
+    <polygon
+      points='60,5 110,35 110,85 60,115 10,85 10,35'
+      fill='%23010b16'
+      stroke='none'
+    />
+
+    <!-- Neon border with glow -->
+    <polygon
       points='60,5 110,35 110,85 60,115 10,85 10,35'
       fill='none'
       stroke='%2300eaff'
@@ -26,6 +33,7 @@
       filter='url(%23glow)'
     />
   </svg>">
+
 
   <title>Alex Anderson · Environmental Scientist & Lab Leader</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
